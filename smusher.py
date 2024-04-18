@@ -3,9 +3,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import re
 
-
-urls = []
-
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 with open("unique_urls.txt", "r") as file:
