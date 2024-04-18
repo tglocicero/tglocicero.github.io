@@ -12,7 +12,7 @@ with open("unique_urls.txt", "r") as file:
     lines = file.readlines()
 
 with open("index.html", "w") as output_file:
-    for url in lines[0:1]:
+    for url in lines:
         driver.get(url)
         unique_page_file_name = re.sub("https.*articles/", "", url)[:-1]
         colloquial_page_name = re.sub("-", " ", re.sub("([0-9]+-)", "", unique_page_file_name))
