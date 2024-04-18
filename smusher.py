@@ -14,7 +14,7 @@ with open("unique_urls.txt", "r") as file:
 with open("index.html", "w") as output_file:
     for url in lines[0:1]:
         driver.get(url)
-        unique_page_file_name = re.sub("https.*articles/", "", url)
+        unique_page_file_name = re.sub("https.*articles/", "", url)[:-1]
         colloquial_page_name = re.sub("-", " ", re.sub("([0-9]+-)", "", unique_page_file_name))
         fileToWrite = open(f"{unique_page_file_name}.html", "w")
         fileToWrite.write(driver.page_source)
